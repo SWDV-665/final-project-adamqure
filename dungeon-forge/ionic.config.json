@@ -1,0 +1,7 @@
+{
+  "name": "Dungeon Forge",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
