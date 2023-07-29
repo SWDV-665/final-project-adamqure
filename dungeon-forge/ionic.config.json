@@ -1,7 +1,7 @@
 {
   "name": "Dungeon Forge",
   "integrations": {
-    "cordova": {}
+    "capacitor": {}
   },
   "type": "angular"
 }
