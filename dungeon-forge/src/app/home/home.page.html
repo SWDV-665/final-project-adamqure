@@ -1,20 +1,36 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      My Campaigns
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content [scrollY]="true">
+  <div *ngIf="(campaigns | async)?.length === 0" id="allDone">
+    <h3>
+      No Adventures Yet?
+    </h3>
+    <h3>
+      Create a New Campaign
+    </h3>
   </div>
+  <cdk-virtual-scroll-viewport itemSize="56" class="ion-content-scroll-host">
+    <ion-list #groceryList>
+      <ion-item-sliding #listItem *cdkVirtualFor="let campaign of campaigns">
+        <ion-item [routerLink]="['/campaign', campaign._id]">
+          <div>
+            <h2>{{campaign.name}}</h2>
+          </div>
+        </ion-item>
+      </ion-item-sliding>
+    </ion-list>
+  </cdk-virtual-scroll-viewport>
+  
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button [routerLink]="['/campaigns/create']">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
+  

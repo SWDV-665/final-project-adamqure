@@ -1,0 +1,36 @@
+<ng-container *ngIf="campaign">
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button [routerLink]="['/campaigns']">
+          <ion-label>Back</ion-label>
+        </ion-button>
+      </ion-buttons>
+      <ion-title>{{ campaign.name }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true">
+    <div>
+      <!-- Overview -->
+      <div [innerHTML]="campaign.html"></div>
+
+      <!-- Setting -->
+      <div [innerHTML]="campaign.setting.html"></div>
+
+      <!-- Adventure Hook -->
+      <div [innerHTML]="campaign.adventureHook.html"></div>
+
+      <!-- Adventures -->
+      <div *ngFor="let adventure of campaign.adventures">
+        <div [innerHTML]="adventure.html"></div>
+
+        <!-- Events -->
+        <div *ngFor="let event of adventure.events">
+          <div [innerHTML]="event.html"></div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ng-container>
+

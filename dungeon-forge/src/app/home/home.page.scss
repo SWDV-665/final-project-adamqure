@@ -25,3 +25,27 @@
 #container a {
   text-decoration: none;
 }
+
+ion-content {
+  overflow-y: scroll;
+}
+cdk-virtual-scroll-viewport {
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+}
+
+ion-list {
+  background-color: transparent;
+}
+
+#allDone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hiddenList {
+  display: none;
+}

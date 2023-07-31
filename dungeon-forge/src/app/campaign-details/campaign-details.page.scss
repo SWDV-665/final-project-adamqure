@@ -1,0 +1,23 @@
+ion-toolbar {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+
+p {
+    white-space: break-spaces;
+}
+
+div:first-of-type {
+    padding: 16px;
+}
+
+.tip-board {
+    padding: 16px;
+    background-color: bisque;
+}
+
+.dm-quote {
+    padding: 16px;
+    background-color: beige;
+}
