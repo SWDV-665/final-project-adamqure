@@ -16,7 +16,7 @@ export class CampaignGeneratorService {
     return new Campaign(
       1,
       "Lost Mine of Phandelver",
-      undefined,
+      "https://mygamenightblog.files.wordpress.com/2019/03/phandelver-banner.jpg?w=1920&h=540&crop=1",
       new CampaignSetting(
         0,
         "The Forgotten Realms",
@@ -58,7 +58,7 @@ export class CampaignGeneratorService {
                   <p>The saddlebags have been looted. Nearby lies an empty leather map case.</p>
               </div>
               <p>Four <b>goblins</b> are hiding in the woods, two on each side of the road. They wait until someone approaches the bodies and then attack.</p>
-              <img src="../../../assets/images/goblin.png">
+              <img src="https://i0.wp.com/gameandtechfocus.com/wp-content/uploads/2021/10/Goblin-Stat-Block.png?resize=400%2C492&ssl=1">
               <p>This will likely be the first of many combat encounters in the adventure. Here are the steps you should follow to run it effectively:</p>
               <ul>
                   <li>Review the goblin stat block in appendix B. Since the goblins are hiding, you’ll need to know their Stealth skill modifier: +6.</li>
@@ -123,7 +123,7 @@ export class CampaignGeneratorService {
                   <p>On the east side of the stream flowing from the cave mouth, a small area in the briar thickets has been hollowed out to form a lookout post or blind. Wooden planks flatten out the briars and provide room for guards to lie hidden and watch the area — including a pair of goblins lurking there right now!</p>
               </div>
               <p>Two <b>goblins</b> are stationed here. If the goblins notice intruders in area 1, they open fire with their bows, shooting through the thickets and probably catching the characters by surprise. If the goblins don’t notice the adventurers in area 1, they spot them when they splash across the stream, and neither side is surprised.</p>
-              <img src="../../../assets/images/goblin.png">
+              <img src="https://i0.wp.com/gameandtechfocus.com/wp-content/uploads/2021/10/Goblin-Stat-Block.png?resize=400%2C492&ssl=1">
               <p>Characters moving carefully or scouting ahead might be able to surprise the goblin lookouts. Have each character who moves ahead make a Dexterity (Stealth) check contested by the goblins’ passive Wisdom (Perception) score to avoid being surprised. See the rulebook for more information on ability check contests.</p>
               <p><b>Thickets.</b> The thickets around the clearing are difficult terrain, but they aren’t dangerous— just annoying. They provide half cover to creatures attacking through them. (See “Difficult Terrain” and “Cover” in the rulebook for more information.)</p>
               `
@@ -168,7 +168,10 @@ export class CampaignGeneratorService {
       <p>Although the DM controls the monsters and villains in the adventure, the relationship between the players and the DM isn’t adversarial. The DM ’s job is to challenge the characters with interesting encounters and tests, keep the game moving, and apply the rules fairly.</p>
       <p>The most important thing to remember about being a good DM is that the rules are a tool to help you have a good time. The rules aren’t in charge. You’re the DM— you’re in charge of the game. Guide the play experience and the use of the rules so that everybody has fun.</p>
       <p>Many players of Dungeons & Dragons find that being the DM is the best part of the game. With the information in this adventure, you’ll be prepared to take on that role for your group.</p>
-      `
+      `,
+      parameters.numPlayerCharacters,
+      parameters.startingLevel,
+      parameters.endingLevel
     )
   }
 }
