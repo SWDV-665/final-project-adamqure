@@ -5,58 +5,67 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div>
-    <div>
-      <div id="pick-num-characters">
-        <ion-label>How Many Player Characters?</ion-label>
-        <ion-label>{{ numPlayers }}</ion-label>
-      </div>
-      <ion-picker trigger="pick-num-characters" [columns]="numCharacterPickerColumns" [buttons]="numCharacterPickerButtons"></ion-picker>
-    </div>
-  </div>
-  <div>
+  <ion-grid>
+    <ion-label>Character Details</ion-label>
+    <ion-row class="ion-justify-content-between" id="pick-num-characters" width="100vw">
+        <ion-col>
+          <ion-label>How Many Player Characters?</ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-label class="picker-value">{{ numPlayers }}</ion-label>
+        </ion-col>
+        <ion-picker trigger="pick-num-characters" [columns]="numCharacterPickerColumns" [buttons]="numCharacterPickerButtons"></ion-picker>
+    </ion-row>
     <ion-label>What Levels Will the Players Achieve?</ion-label>
-    <div id="pick-start-level">
-      <ion-label>Start Level:</ion-label>
-      <ion-label>{{ startLevel }}</ion-label>
-    </div>
-    <ion-picker trigger="pick-start-level" [columns]="startLevelColumns" [buttons]="startLevelPickerButtons"></ion-picker>
-    <div id="pick-end-level">
-      <ion-label>End Level:</ion-label>
-      <ion-label>{{ endLevel }}</ion-label>
-    </div>
-    <ion-picker trigger="pick-end-level" [columns]="endLevelColumns" [buttons]="endLevelPickerButtons"></ion-picker>
-  </div>
-  <div>
-    <ion-select label="How Does Your Group Feel About Role-Playing Opportunities?" placeholder="Select Option" interface="action-sheet" label-placement="stacked" (ionChange)="updateRolePlayScale($event)">
-      <ion-select-option value="2" justify="space-between">We love to role play</ion-select-option>
-      <ion-select-option value="1" justify="space-between">We are okay with role play</ion-select-option>
-      <ion-select-option value="0" justify="space-between">We'd prefer not to role play much</ion-select-option>
-    </ion-select>
-  </div>
-  <div>
-    <ion-select label="How Does Your Group Feel About Traps?" placeholder="Select Option" interface="action-sheet" label-placement="stacked" (ionChange)="updateTrapScale($event)">
-      <ion-select-option value="2" justify="space-between">The more traps the better</ion-select-option>
-      <ion-select-option value="1" justify="space-between">Keep us on our toes, but not too many traps</ion-select-option>
-      <ion-select-option value="0" justify="space-between">We are wary of traps, let's not encounter too many</ion-select-option>
-    </ion-select>
-  </div>
-  <div>
-    <ion-select label="How Does Your Group Feel About Puzzles?" placeholder="Select Option" interface="action-sheet" label-placement="stacked" (ionChange)="updatePuzzleScale($event)">
-      <ion-select-option value="2" justify="space-between">Bring it on!</ion-select-option>
-      <ion-select-option value="1" justify="space-between">We should be able to figure out a few</ion-select-option>
-      <ion-select-option value="0" justify="space-between">Puzzles waste too much time</ion-select-option>
-    </ion-select>
-  </div>
-  <div>
-    <ion-select label="How Does Your Group Feel About Combat Situations?" placeholder="Select Option" interface="action-sheet" label-placement="stacked" (ionChange)="updateCombatScale($event)">
-      <ion-select-option value="2" justify="space-between">We all wanted to be Barbarians</ion-select-option>
-      <ion-select-option value="1" justify="space-between">We won't back down from a fight</ion-select-option>
-      <ion-select-option value="0" justify="space-between">We rely on diplomacy</ion-select-option>
-    </ion-select>
-  </div>
-  <div>
-    <ion-button (click)="submitForm()">Create Campaign</ion-button>
-    <ion-button [routerLink]="['/campaigns']">Cancel</ion-button>
-  </div>
+    <ion-row class="ion-justify-content-between" id="pick-start-level" width="100vw">
+      <ion-col>
+        <ion-label>Start Level:</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-label class="picker-value">{{ startLevel }}</ion-label>
+      </ion-col>
+      <ion-picker trigger="pick-start-level" [columns]="startLevelColumns" [buttons]="startLevelPickerButtons"></ion-picker>
+    </ion-row>
+    <ion-row class="ion-justify-content-between" id="pick-end-level" width="100vw">
+      <ion-col>
+        <ion-label>End Level:</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-label class="picker-value">{{ endLevel }}</ion-label>
+      </ion-col>
+      <ion-picker trigger="pick-end-level" [columns]="endLevelColumns" [buttons]="endLevelPickerButtons"></ion-picker>
+    </ion-row>
+    <ion-row>
+      <ion-select label="How Does Your Group Feel About Role-Playing Opportunities?" placeholder="Select Option" interface="action-sheet" label-placement="stacked" (ionChange)="updateRolePlayScale($event)">
+        <ion-select-option value="2" justify="space-between">We love to role play</ion-select-option>
+        <ion-select-option value="1" justify="space-between">We are okay with role play</ion-select-option>
+        <ion-select-option value="0" justify="space-between">We'd prefer not to role play much</ion-select-option>
+      </ion-select>
+    </ion-row>
+    <ion-row>
+      <ion-select label="How Does Your Group Feel About Traps?" placeholder="Select Option" interface="action-sheet" label-placement="stacked" (ionChange)="updateTrapScale($event)">
+        <ion-select-option value="2" justify="space-between">The more traps the better</ion-select-option>
+        <ion-select-option value="1" justify="space-between">Keep us on our toes, but not too many traps</ion-select-option>
+        <ion-select-option value="0" justify="space-between">We are wary of traps, let's not encounter too many</ion-select-option>
+      </ion-select>
+    </ion-row>
+    <ion-row>
+      <ion-select label="How Does Your Group Feel About Puzzles?" placeholder="Select Option" interface="action-sheet" label-placement="stacked" (ionChange)="updatePuzzleScale($event)">
+        <ion-select-option value="2" justify="space-between">Bring it on!</ion-select-option>
+        <ion-select-option value="1" justify="space-between">We should be able to figure out a few</ion-select-option>
+        <ion-select-option value="0" justify="space-between">Puzzles waste too much time</ion-select-option>
+      </ion-select>
+    </ion-row>
+    <ion-row>
+      <ion-select label="How Does Your Group Feel About Combat Situations?" placeholder="Select Option" interface="action-sheet" label-placement="stacked" (ionChange)="updateCombatScale($event)">
+        <ion-select-option value="2" justify="space-between">We all wanted to be Barbarians</ion-select-option>
+        <ion-select-option value="1" justify="space-between">We won't back down from a fight</ion-select-option>
+        <ion-select-option value="0" justify="space-between">We rely on diplomacy</ion-select-option>
+      </ion-select>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      <ion-button class="button-set" (click)="submitForm()">Create Campaign</ion-button>
+      <ion-button class="button-set" [routerLink]="['/campaigns']">Cancel</ion-button>
+    </ion-row>
+  </ion-grid>
 </ion-content>
